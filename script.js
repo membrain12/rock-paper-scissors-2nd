@@ -35,3 +35,25 @@ function playRound(playerChoice, computerChoice) {
         return `You Lose! ${capitalizeFirstLetter(computerChoice)} beats ${capitalizeFirstLetter(playerChoice)}`;
     }
 }
+
+function game() {
+    let rounds = 5;
+    let playerScore = 0;
+    let computerScore = 0;
+    let currentRound = 1;
+    let result;
+    
+
+    while (currentRound <= rounds) {
+        console.log(`Round ${currentRound}`);
+        result = playRound(getPlayerChoice(), getComputerChoice());
+        if (result.slice(0, 7) == "You Win") {
+            playerScore++;
+        } else if (result.slice(0, 8) == "You Lose") {
+            computerScore++;
+        }
+        console.log(result);
+        console.log(`The Score is Player: ${playerScore} Computer: ${computerScore}`);
+        currentRound++;
+    }
+}
