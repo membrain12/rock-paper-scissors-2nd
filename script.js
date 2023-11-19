@@ -1,10 +1,19 @@
 function getComputerChoice() {
     let n = Math.floor(Math.random() * 3) + 1;
     if (n == 1) {
-        return "Rock";
+        return "rock";
     } else if (n == 2) {
-        return "Paper";
+        return "paper";
     } else {
-        return "Scissors";
+        return "scissors";
     }
+}
+
+function getPlayerChoice() {
+    let playerChoice = prompt("Rock, Paper, or Scissors?");
+    playerChoice = playerChoice.toLowerCase();
+    while (playerChoice != "rock" && playerChoice != "paper" && playerChoice != "scissors") {
+        playerChoice = prompt("Please choose Rock, Paper, or Scissors").toLowerCase();
+    }
+    return playerChoice;
 }
