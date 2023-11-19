@@ -18,16 +18,20 @@ function getPlayerChoice() {
     return playerChoice;
 }
 
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
 function playRound(playerChoice, computerChoice) {
     if (playerChoice == computerChoice) {
         return "It's a Tie!";
     } else if (playerChoice == "rock" && computerChoice == "scissors") {
-        return `You Win! ${playerChoice} beats ${computerChoice}`;
+        return `You Win! ${capitalizeFirstLetter(playerChoice)} beats ${capitalizeFirstLetter(computerChoice)}`;
     } else if (playerChoice == "paper" && computerChoice == "rock") {
-        return `You Win! ${playerChoice} beats ${computerChoice}`;
+        return `You Win! ${capitalizeFirstLetter(playerChoice)} beats ${capitalizeFirstLetter(computerChoice)}`;
     } else if (playerChoice == "scissors" && computerChoice == "paper") {
-        return `You Win! ${playerChoice} beats ${computerChoice}`;
+        return `You Win! ${capitalizeFirstLetter(playerChoice)} beats ${capitalizeFirstLetter(computerChoice)}`;
     } else {
-        return `You Lose! ${computerChoice} beats ${playerChoice}`;
+        return `You Lose! ${capitalizeFirstLetter(computerChoice)} beats ${capitalizeFirstLetter(playerChoice)}`;
     }
 }
